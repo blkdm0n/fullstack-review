@@ -8,6 +8,7 @@ let getReposByUsername = (username) => {
   // The options object has been provided to help you out, 
   // but you'll have to fill in the URL
   let options = {
+    method: 'GET',
     url: `https://api.github.com/users/${username}`,
     headers: {
       'User-Agent': 'request',
@@ -15,11 +16,14 @@ let getReposByUsername = (username) => {
     }
   };
 
-  function callback(err, res, body) {
-    if (!err && res.statusCode === 200) {
-      var repos = JSON.parse(body);
-      console.log('Is there data here');
-    } 
-  }
+  // function callback(err, res, body) {
+  //   if (!err && res.statusCode === 200) {
+  //     var repos = JSON.parse(body);
+  //     console.log('Is there data here', repos);
+  //   } 
+  // }
+};
+
+//request(, callback);
 
 module.exports.getReposByUsername = getReposByUsername;
