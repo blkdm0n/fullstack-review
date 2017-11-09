@@ -15,13 +15,9 @@ let getReposByUsername = (username) => {
       'Authorization': `token ${config.TOKEN}`
     }
   };
+  console.log('In the getRepos function');
 
-  // function callback(err, res, body) {
-  //   if (!err && res.statusCode === 200) {
-  //     var repos = JSON.parse(body);
-  //     console.log('Is there data here', repos);
-  //   } 
-  // }
+  
 };
 
 //request(, callback);

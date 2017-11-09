@@ -17,12 +17,13 @@ class App extends React.Component {
     console.log(`${term} was searched`);
     // TODO
     //POST REQUEST FROM REACT HERE
+    //WORKS FINE!!!
     $.ajax({
       url: 'repos',
       type: 'POST',
-      data: term,
+      data: {'username': `${term}`},
       success: function(data) {
-        console.log('Bye Bye Data');
+        console.log('Bye Bye Data',);
       },
       error: function(data) {
         console.log('Data still here :(');
