@@ -13,6 +13,21 @@ class App extends React.Component {
 
   }
 
+  //One initial mount we want to populate some data
+  //Once component mounts a 'GET' is sent to the server
+  
+  componentDidMount() {
+   $.ajax({
+    url: 'repos',
+    type: 'GET',
+    success: function(data) {
+      console.log('Incoming Data', data);
+    },
+    error: function(data) {
+      console.log('No data yet!');
+    }});  
+  }
+
   search (term) {
     console.log(`${term} was searched`);
     // TODO
@@ -23,7 +38,7 @@ class App extends React.Component {
       type: 'POST',
       data: {'username': `${term}`},
       success: function(data) {
-        console.log('Bye Bye Data',);
+        console.log('Bye Bye Data');
       },
       error: function(data) {
         console.log('Data still here :(');
