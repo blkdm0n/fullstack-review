@@ -15,9 +15,9 @@ class App extends React.Component {
 
   search (term) {
     console.log(`${term} was searched`);
-    //what is the todo?
-      //i need to get this usersname to my server
     // TODO
+    //POST REQUEST FROM REACT HERE
+    
   }
 
   render () {

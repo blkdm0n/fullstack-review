@@ -15,6 +15,11 @@ let getReposByUsername = (username) => {
     }
   };
 
-}
+  function callback(err, res, body) {
+    if (!err && res.statusCode === 200) {
+      var repos = JSON.parse(body);
+      console.log('Is there data here');
+    } 
+  }
 
 module.exports.getReposByUsername = getReposByUsername;
