@@ -1,6 +1,6 @@
 const express = require('express');
 const fakeData = require('../data');
-const getReposByUsername = require('../helpers/github.js');
+const getReposByUsername = require('../helpers/github');
 const bodyParser = require ('body-parser');
 
 
@@ -20,12 +20,7 @@ app.post('/repos', function (req, res) {
   //we get the user name by sending a post request from the client
   //this data is being return in the data my AJAX call
   //the search value wasn't in a string causing an error
-  
   console.log(req.body);
-  
-
-
-
   res.send('Hello from POST!');
 });
 
