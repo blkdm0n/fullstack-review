@@ -13,15 +13,17 @@ class App extends React.Component {
 
   }
 
+  componentDidMount() {
   //One initial mount we want to populate some data
   //Once component mounts a 'GET' is sent to the server
-  
-  componentDidMount() {
    $.ajax({
     url: 'repos',
     type: 'GET',
-    success: function(data) {
+    //using an arrow function on the success function sets the this context
+    success: (data) => {
       console.log('Incoming Data', data);
+      //setState takes an object NOW I see the repo count :)
+      this.setState({'repos': data});
     },
     error: function(data) {
       console.log('No data yet!');
@@ -30,9 +32,7 @@ class App extends React.Component {
 
   search (term) {
     console.log(`${term} was searched`);
-    // TODO
-    //POST REQUEST FROM REACT HERE
-    //WORKS FINE!!!
+    //POST using AJAX remember that the variable data need to be passed as a string
     $.ajax({
       url: 'repos',
       type: 'POST',
