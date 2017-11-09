@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/fetcher');
 
 
-// console.log(fakeData[0].owner.login);
-// console.log(fakeData[0].html_url);
-// console.log(fakeData[0].description);
 
 let repoSchema = mongoose.Schema({
-  // TODO: your schema here!
-  
-  
+  // DONE: your schema here!
+  // Schema defines shape of the data in our database
+  username: String,    // console.log(data[0].owner.login);
+  url: String,         // console.log(data[0].html_url);
+  description: String  // console.log(data[0].description);
 });
 
+//convert schema into a model we can use
 let Repo = mongoose.model('Repo', repoSchema);
 
 let save = (/* TODO */) => {

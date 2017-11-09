@@ -27,8 +27,6 @@ app.post('/repos', function (req, res) {
 app.get('/repos', function (req, res) {
   // TODO - your code here!
   // This route should send back the top 25 repos
-  
-
   //required and rendered fakeData on get request
   res.send(fakeData);
 });
