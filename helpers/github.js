@@ -1,5 +1,6 @@
 const request = require('request');
 const config = require('../config.js');
+const saveRepos = require('../database/index.js');
 
 
 //was this the problem?  let limited the block scope
@@ -17,15 +18,14 @@ const getReposByUsername = (username) => {
       'Authorization': `token ${config.TOKEN}`
     }
   };
-  console.log('In the getRepos function');
-  console.log(options.url);
 
-  function callback(err, resp, body) {
+  function callback(err, resp, repos) {
     if (err) {
       console.log('error');
     } else {
+      console.log('off to fetch some repos');
       //repo data is here!!!!
-      console.log(body); 
+      saveRepos.save(repos);      
     }
   }
   //invoke our function so that we can retrieve the data

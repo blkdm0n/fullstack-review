@@ -19,8 +19,6 @@ app.post('/repos', function (req, res) {
   //we get the user name by sending a post request from the client
   //this data is being return in the data my AJAX call
   //the search value wasn't in a string causing an error
-
-  console.log(req.body);
   repoFetch.getReposByUsername(req.body.username);
   res.send('Hello from POST!');
 });
